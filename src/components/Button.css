@@ -1,0 +1,7 @@
+ion-button {
+  color: white;
+  font-weight: bold;
+  font-size: 16pt;
+  --border-radius: 50px;
+  --background: #522a9e;
+}

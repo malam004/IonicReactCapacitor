@@ -1,0 +1,6 @@
+.buttonBox {
+  height: 1000px;
+  --width: 440px
+  --margin: 0;
+  top: 500px;
+}

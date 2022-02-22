@@ -4,5 +4,6 @@ Created with CodeSandbox
 ionic integrations enable capacitor
 npx cap init "iCalculator" "com.icalculator.app"
 ionic build
+npx cap copy
 npx cap add ios
 #npx cap add androd

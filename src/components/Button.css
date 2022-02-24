@@ -1,7 +1,20 @@
 ion-button {
   color: white;
   font-weight: bold;
-  font-size: 16pt;
+  font-size: 30pt;
   --border-radius: 50px;
   --background: #522a9e;
+  padding: 10pt 40pt 0pt 40pt;
 }
+
+@media only screen and (max-width: 768px) {
+  ion-button {
+    color: white;
+    font-weight: bold;
+    font-size: 16pt;
+    padding: 0pt;
+    --border-radius: 50px;
+    --background: #522a9e;
+  }
+}
+

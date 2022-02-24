@@ -22,3 +22,16 @@ ion-button {
     width: 60px;
   }
 }
+
+@media screen and (orientation: landscape) {
+  ion-button {
+    color: white;
+    font-weight: bold;
+    font-size: 30pt;
+    height: 50px;
+    width: 120px;
+    --border-radius: 50px;
+    --background: #522a9e;
+    padding: 0pt pt 0pt 3pt;
+  }
+}

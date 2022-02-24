@@ -10,7 +10,7 @@
   background-image: #522a9e;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px), screen and (orientation: portrait) {
   .wrapper {
     width: 290px;
     height: 480px;
@@ -22,3 +22,16 @@
   }
 }
 
+@media screen and (orientation: landscape) {
+  .wrapper {
+    width: 99vw;
+    height: 480px;
+    --flex: auto;
+    --column-gap: 900px;
+    position: absolute;
+    --left: 50%;
+    border-radius: 20px;
+    background-color: #522a9e;
+    background-image: #522a9e;
+  }
+}

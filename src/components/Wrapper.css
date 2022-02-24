@@ -1,9 +1,24 @@
 .wrapper {
-  width: 290px;
+  width: 99vw;
   height: 480px;
-  --position: absolute; 
+  --flex: auto;
+  --column-gap: 900px;
+  position: absolute;
   --left: 50%;
   border-radius: 20px;
   background-color: #522a9e;
   background-image: #522a9e;
 }
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    width: 290px;
+    height: 480px;
+    position: absolute;
+    --left: 50%;
+    border-radius: 20px;
+    background-color: #522a9e;
+    background-image: #522a9e;
+  }
+}
+

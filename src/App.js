@@ -14,7 +14,7 @@ const btnValues = [
   [0, ".", "L"]
 ];
 
-const toLocaleString = (num) =>
+const regLocaleString = (num) =>
   String(num).replace(/(?<!\..*)(\d)(?=(?:\d{3})+(?:\.|$))/g, "$1 ");
 
 const removeSpaces = (num) => num.toString().replace(/\s/g, "");
@@ -44,8 +44,8 @@ const App = () => {
           calc.num === 0 && value === "0"
             ? "0"
             : removeSpaces(calc.num) % 1 === 0
-            ? toLocaleString(Number(removeSpaces(calc.num + value)))
-            : toLocaleString(calc.num + value),
+            ? regLocaleString(Number(removeSpaces(calc.num + value)))
+            : regLocaleString(calc.num + value),
         res: !calc.sign ? 0 : calc.res
       });
     }
@@ -86,7 +86,7 @@ const App = () => {
         res:
           calc.num === "0" && calc.sign === "/"
             ? "Can't divide with 0"
-            : toLocaleString(
+            : regLocaleString(
                 math(
                   Number(removeSpaces(calc.res)),
                   Number(removeSpaces(calc.num)),
@@ -98,7 +98,7 @@ const App = () => {
         log:
           calc.log +
           "L:" +
-          toLocaleString(
+          regLocaleString(
             math(
               Number(removeSpaces(calc.res)),
               Number(removeSpaces(calc.num)),
@@ -130,35 +130,37 @@ const App = () => {
   };
 
   return (
-    <Wrapper>
-      <IonMenus childToParent={childToParent} />
-      <Screen value={calc.num ? calc.num : calc.res} />
-      <ButtonBox>
-        {btnValues.flat().map((btn, i) => {
-          return (
-            <Button
-              key={i}
-              fColor={data}
-              className={btn === "=" ? "equals" : ""}
-              value={btn}
-              onClick={
-                btn === "C"
-                  ? resetClickHandler
-                  : btn === "="
-                  ? equalsClickHandler
-                  : btn === "/" || btn === "X" || btn === "-" || btn === "+"
-                  ? signClickHandler
-                  : btn === "."
-                  ? dotClickHandler
-                  : btn === "L"
-                  ? logClickHandler
-                  : numClickHandler
-              }
-            />
-          );
-        })}
-      </ButtonBox>
-    </Wrapper>
+    <React.Fragment>
+      <Wrapper>
+        <IonMenus childToParent={childToParent} />
+        <Screen value={calc.num ? calc.num : calc.res} />
+        <ButtonBox>
+          {btnValues.flat().map((btn, i) => {
+            return (
+              <Button
+                key={i}
+                fColor={data}
+                className={btn === "=" ? "equals" : ""}
+                value={btn}
+                onClick={
+                  btn === "C"
+                    ? resetClickHandler
+                    : btn === "="
+                    ? equalsClickHandler
+                    : btn === "/" || btn === "X" || btn === "-" || btn === "+"
+                    ? signClickHandler
+                    : btn === "."
+                    ? dotClickHandler
+                    : btn === "L"
+                    ? logClickHandler
+                    : numClickHandler
+                }
+              />
+            );
+          })}
+        </ButtonBox>
+      </Wrapper>
+    </React.Fragment>
   );
 };
 
